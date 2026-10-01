@@ -7,7 +7,8 @@ Last verified: 2026-10-01.
 - `src/content.mjs` owns studio, project and route metadata.
 - `src/server/render.mjs` renders every public route with `what-framework/server`, including direct project pages and root `404.html`.
 - `src/client/main.jsx` mounts the filter and proposal islands; browser JSX is never imported by the Node renderer.
-- `scripts/build.mjs` validates `SITE_URL`, writes static HTML, sitemap, robots and `dist/manifest.json`.
+- `scripts/build.mjs` validates `SITE_URL` and writes static HTML, sitemap and robots output under `dist/static`.
+- `scripts/check.mjs` validates the emitted Vura route manifest with `@celsian/vura-contract`.
 - `scripts/serve-static.mjs` previews `dist/static` and returns real HTTP 404 for unknown paths.
 
 ## What Framework patterns
@@ -24,6 +25,7 @@ Last verified: 2026-10-01.
 - Storage APIs can throw, so proposal reads/writes use safe wrappers and tab-local memory fallback.
 - SVG studies are deliberately original geometric drawings, not fake photography or client assets.
 - Browser QA found a dense mobile composition where the hero layer could intercept pointer taps on the proposal button. CSS now keeps the proposal layer above the hero, and the smoke test verifies the keyboard activation path as the reliable accessible flow.
+- Vura upload rejected the first handwritten static manifest because it lacked required `timestamp` and `pages[].filePath` fields. The starter now emits the full manifest contract and maps each route to its promoted public file via `config.staticKey`.
 - The proposal download is local-only; there is no submission endpoint, CRM, analytics or file upload.
 
 ## Reference snippets
