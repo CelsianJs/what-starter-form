@@ -84,3 +84,8 @@
 - Reduce the giant intro image/headline behavior; lead with project context, measured typography and an asymmetric portfolio viewport.
 - Make the three architectural studies visually distinct, not repeated thumbnails with different labels.
 - Preserve the monochrome/vermillion studio voice while making the page feel like a clean working portfolio rather than a poster.
+
+## Refinement notes — 2026-10-02 Opus review
+- Restored centered case-study alignment by changing the case margin back to `auto` horizontally.
+- Removed the first project’s row span so the three-card grid is balanced while preserving the original SVG drawing variants in both server and client-rendered filters.
+- Case `h2` labels now use a compact drafting-label scale, leaving the project title and drawing as the dominant hierarchy.

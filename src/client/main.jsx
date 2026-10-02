@@ -8,6 +8,13 @@ function FilterIsland() {
   const active = useSignal('all');
   const types = ['all', ...new Set(data.projects.map((project) => project.type))];
   const results = useComputed(() => active() === 'all' ? data.projects : data.projects.filter((project) => project.type === active()));
+  function studyPath(project) {
+    return project.slug === 'north-arcade'
+      ? 'M52 240 L52 126 L112 126 L112 92 L190 92 L190 240 M226 240 L226 78 L338 122 L338 240'
+      : project.slug === 'linea-library'
+        ? 'M58 224 L360 78 M80 248 L382 102 M76 224 L76 124 L180 124 L180 174 L300 174 L300 104'
+        : 'M66 236 L66 112 L354 112 L354 236 M108 112 L138 64 L168 112 M242 112 L272 64 L302 112';
+  }
   return (
     <>
       <div class="filters" aria-label="Project filters">
@@ -17,7 +24,7 @@ function FilterIsland() {
       <div class="project-grid">
         {() => results().map((project) => (
           <a class="project-card" href={`/projects/${project.slug}`}>
-            <div class="study"><svg viewBox="0 0 420 300"><rect x="20" y="28" width="380" height="244" fill="none" stroke={project.accent} stroke-width="3" /><path d="M55 238 L120 94 L184 238 M120 94 L312 94 L365 238" fill="none" stroke="#151515" stroke-width="5" /><rect x="206" y="122" width="86" height="116" fill={project.accent} opacity=".14" stroke={project.accent} /></svg></div>
+            <div class="study"><svg viewBox="0 0 420 300"><rect x="20" y="28" width="380" height="244" fill="none" stroke={project.accent} stroke-width="3" /><path d={studyPath(project)} fill="none" stroke="#151515" stroke-width="5" /><g stroke="#151515" stroke-width="1">{[70, 110, 150, 190, 230].map((y) => <line x1="42" y1={String(y)} x2="378" y2={String(y)} />)}</g><rect x={project.slug === 'linea-library' ? '82' : '206'} y={project.slug === 'sill-workshop' ? '138' : '122'} width={project.slug === 'north-arcade' ? '124' : '86'} height={project.slug === 'linea-library' ? '72' : '116'} fill={project.accent} opacity=".14" stroke={project.accent} /></svg></div>
             <div><p class="meta">{project.type} · {project.year}</p><h3>{project.title}</h3><p>{project.summary}</p></div>
           </a>
         ))}

@@ -25,6 +25,8 @@ Last verified: 2026-10-01.
 - Storage APIs can throw, so proposal reads/writes use safe wrappers and tab-local memory fallback.
 - SVG studies are deliberately original geometric drawings, not fake photography or client assets.
 - Browser QA found a dense mobile composition where the hero layer could intercept pointer taps on the proposal button. CSS now keeps the proposal layer above the hero, and the smoke test verifies the keyboard activation path as the reliable accessible flow.
+- Refinement: the case-study route regressed because `.case{margin:34px 0 68px}` overrode `.shell{margin:auto}`; the route now uses horizontal auto margins and compact drafting-label `h2`s.
+- Refinement: the client filter mirrors the original SVG study variants, so enhanced project lists do not collapse all three studies into one simplified drawing.
 - Vura upload rejected the first handwritten static manifest because it lacked required `timestamp` and `pages[].filePath` fields. The starter now emits the full manifest contract and maps each route to its promoted public file via `config.staticKey`.
 - The proposal download is local-only; there is no submission endpoint, CRM, analytics or file upload.
 
