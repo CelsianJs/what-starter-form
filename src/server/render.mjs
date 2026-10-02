@@ -35,7 +35,7 @@ function Layout({ path, title, description, origin, body }) {
     h('body', {},
       h('header', { class: 'shell mast' }, h('a', { class: 'brand', href: '/' }, 'Form'), h('nav', { class: 'nav', 'aria-label': 'Primary' }, h('a', { href: '/projects' }, 'Projects'), h('a', { href: '/studio' }, 'Studio'), h('a', { href: '/proposal' }, 'Proposal'), h('a', { href: '/build' }, 'Build'))),
       h('main', {}, body),
-      h('footer', { class: 'shell footer' }, 'Fictional studio studies · local proposal state · static Vura artifact'),
+      h('footer', { class: 'shell footer' }, 'Fictional studio studies · browser-local proposal state · project case studies'),
       h('script', { id: 'form-data', type: 'application/json' }, JSON.stringify({ projects, proposalDefaults })),
     ),
   );
@@ -58,7 +58,7 @@ function Home() {
 }
 
 function Projects() {
-  return h('div', { class: 'shell' }, h('section', { class: 'hero' }, h('div', {}, h('p', { class: 'eyeline' }, 'Project index'), h('h1', {}, 'Filter by discipline, then open a case study directly.')), h('p', {}, 'The fallback list is static HTML; JavaScript enhances it with a local filter island.')), h('section', { id: 'project-filter', class: 'panel' }, h('p', {}, 'Project filter loading…'), ProjectGrid(projects)));
+  return h('div', { class: 'shell' }, h('section', { class: 'hero' }, h('div', {}, h('p', { class: 'eyeline' }, 'Project index'), h('h1', {}, 'Filter by discipline, then open a case study directly.')), h('p', {}, 'Browse the full study list, choose a discipline, and open each case study directly.')), h('section', { id: 'project-filter', class: 'panel' }, h('p', {}, 'Project filter loading…'), ProjectGrid(projects)));
 }
 
 function ProjectGrid(items) {
@@ -74,7 +74,7 @@ function Studio() {
 }
 
 function Proposal() {
-  return h('div', { class: 'shell' }, h('section', { class: 'hero' }, h('div', {}, h('p', { class: 'eyeline' }, 'Local proposal brief'), h('h1', {}, 'Draft a study brief in the browser.')), h('p', {}, 'The proposal island stores fields locally when available and downloads a plain-text brief without contacting a server.')), h('section', { id: 'proposal-island', class: 'brief-grid' }, h('div', { class: 'panel' }, h('p', {}, 'Proposal editor loading…'))));
+  return h('div', { class: 'shell' }, h('section', { class: 'hero' }, h('div', {}, h('p', { class: 'eyeline' }, 'Local proposal brief'), h('h1', {}, 'Draft a study brief in the browser.')), h('p', {}, 'Your brief stays in this browser when storage is available and downloads as a plain-text study note without contacting a server.')), h('section', { id: 'proposal-island', class: 'brief-grid' }, h('div', { class: 'panel' }, h('p', {}, 'Proposal editor loading…'))));
 }
 
 function Build() {

@@ -1,7 +1,7 @@
 export const site = {
   name: 'Form',
   tagline: 'An architecture studio for thresholds, shadows and public rooms.',
-  description: 'A fictional architecture studio starter with static case studies and a local proposal brief island.',
+  description: 'A fictional architecture studio site with project case studies and a browser-local proposal brief.',
   repo: 'https://github.com/CelsianJs/what-starter-form',
   expectedUrl: 'https://what-starter-form-fae244da.vura.app',
 };
