@@ -1,8 +1,12 @@
 # Design
 
+## Product-depth refinement — 2026-10-07
+
+Case studies now state fictional concept area, program, materials, section rationale and a real design tradeoff. Related studies and `?study=slug` keep the brief flow connected to the chosen project. Existing brief edits are preserved until explicit application. Studio/home copy describes architectural practice rather than template construction; drawing variants and paper/ink/vermillion remain.
+
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-10-01
+- Last refreshed: 2026-10-07
 - Primary product surfaces: Studio front, project index, project details, studio method, proposal brief, build journal, not-found page.
 - Evidence reviewed: Starter brief; sibling What starter SSG/Vura pattern; local package constraints.
 
