@@ -1,6 +1,12 @@
 # Build journal
 
-Last verified: 2026-10-01.
+## Product-depth patterns — 2026-10-07
+
+A case study links to `/proposal?study=${project.slug}`. The client resolves that slug against embedded project records, seeds an empty editor with study context and preserves a saved brief until the visitor selects Use study brief. No lead is submitted. `output` remains a computed projection of the four field signals, so editing immediately changes the downloadable preview. A figure wrapper initially inherited browser margins and constrained the drawing; resetting figure margin and aspect ratio restores its drafting frame. Preview grid children now use `min-width:0` and `white-space:pre-wrap` at all widths. Product-depth checks require program/material/rationale records; browser regressions verify contextual seed, preserved edits, download, no-JS fallback and 390px layout.
+
+Verification: `npm test` runs content/model regressions, production artifact checks, contextual browser flows, desktop/mobile screenshots and the original smoke suite. Screenshot proof is under `.screenshots/`; no external services are required.
+
+Last verified: 2026-10-07.
 
 ## Architecture
 

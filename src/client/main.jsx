@@ -35,13 +35,15 @@ function FilterIsland() {
 
 function ProposalIsland() {
   const storageStatus = useSignal('persistent');
-  const initial = normalize(safeJson(safeGet(STORAGE, storageStatus)) || data.proposalDefaults);
+  const study = data.projects.find(project => project.slug === new URLSearchParams(location.search).get('study'));
+  const studyBrief = study ? { client: 'Study client', site: `${study.title} · ${study.location}`, scope: `${study.brief}\nProgram: ${study.program}`, budget: 'To be established during feasibility' } : data.proposalDefaults;
+  const initial = normalize(safeJson(safeGet(STORAGE, storageStatus)) || studyBrief);
   const client = useSignal(initial.client);
   const site = useSignal(initial.site);
   const scope = useSignal(initial.scope);
   const budget = useSignal(initial.budget);
   const status = useSignal('Not downloaded yet.');
-  const output = useComputed(() => `FORM PROPOSAL BRIEF\n\nClient: ${client()}\nSite: ${site()}\nScope: ${scope()}\nBudget: ${budget()}\n\nPrepared locally in the Form starter.`);
+  const output = useComputed(() => `FORM PROPOSAL BRIEF\n\nClient: ${client()}\nSite: ${site()}\nScope: ${scope()}\nBudget: ${budget()}\n\nPrepared locally. Not submitted to a studio.`);
 
   useEffect(() => {
     safeSet(STORAGE, JSON.stringify({ client: client(), site: site(), scope: scope(), budget: budget() }), storageStatus);
@@ -64,6 +66,7 @@ function ProposalIsland() {
   return (
     <>
       <div class="brief">
+        {study ? <div><p>{study.title} selected. Saved edits remain until you apply the study brief.</p><button type="button" onClick={() => { client(studyBrief.client); site(studyBrief.site); scope(studyBrief.scope); budget(studyBrief.budget); status('Study brief applied locally.'); }}>Use {study.title} brief</button></div> : null}
         <label>Client<input value={client} onInput={(event) => client(event.target.value)} /></label>
         <label>Site<input value={site} onInput={(event) => site(event.target.value)} /></label>
         <label>Scope<textarea rows="5" value={scope} onInput={(event) => scope(event.target.value)} /></label>
