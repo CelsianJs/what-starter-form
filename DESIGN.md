@@ -2,11 +2,11 @@
 
 ## Product-depth refinement — 2026-10-07
 
-Case studies now state fictional concept area, program, materials, section rationale and a real design tradeoff. Related studies and `?study=slug` keep the brief flow connected to the chosen project. Existing brief edits are preserved until explicit application. Studio/home copy describes architectural practice rather than template construction; drawing variants and paper/ink/vermillion remain.
+Case studies now state fictional concept area, program, materials, section rationale and a real design tradeoff. Related studies and `?study=slug` keep the brief flow connected to the chosen project. Existing brief edits are preserved until explicit application. Studio/home copy describes architectural practice rather than template construction; drawing variants remain; the current white/graphite/terracotta baseline is defined below.
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-10-07
+- Last refreshed: 2026-10-08
 - Primary product surfaces: Studio front, project index, project details, studio method, proposal brief, build journal, not-found page.
 - Evidence reviewed: Starter brief; sibling What starter SSG/Vura pattern; local package constraints.
 
@@ -36,11 +36,11 @@ Case studies now state fictional concept area, program, materials, section ratio
 - Tradeoffs: The proposal is local-only to keep the starter portable and privacy-preserving.
 
 ## Visual language
-- Color: Warm paper, ink black, graphite, vermillion.
-- Typography: Strong serif display with narrow uppercase drafting labels.
-- Spacing/layout rhythm: Asymmetric columns, section numbers, viewport frames, ruled measurements.
-- Shape/radius/elevation: Square edges, hairlines, no heavy shadows.
-- Motion: Subtle drawing-line reveals and filter transitions; reduced motion disables movement.
+- Color: White background, graphite text, muted gray, terracotta action/focus accent.
+- Typography: Avenir Next / Segoe UI Variable / Segoe UI / sans-serif; 16px body at 1.6 line height, 14px chrome, bounded 48px desktop / 32px mobile headings and 20px case-section headings.
+- Spacing/layout rhythm: 8px rhythm, balanced columns, landscape source SVG studies, one-column build-journal reading layout.
+- Shape/radius/elevation: 6px controls, quiet light borders, no decorative shadows.
+- Motion: No essential animation; clear selected/focus states carry interaction feedback.
 - Imagery/iconography: Original inline SVG building studies generated from project metadata.
 
 ## Components

@@ -1,5 +1,11 @@
 # Build journal
 
+## Contemporary interface baseline — 2026-10-08
+
+The stylesheet is consolidated around a shared local sans-serif stack, explicit 16px body and 14px control typography, 44px minimum button/input/navigation targets and an 8px spacing rhythm. Headings stop at 48px on desktop and 32px on mobile across product, detail and build routes. Source content, client state, routes, local persistence and file-download semantics are unchanged. Quiet borders replace decorative backgrounds, heavy outlines and offset shadows; the original content objects remain the focal point.
+
+Visual verification covers 1440×1000 and 390×844 primary, detail, interactive and build surfaces, horizontal geometry, focus, source-native controls and no-JavaScript content. `npm test` runs content regressions, production build checks, existing browser/smoke flows and then the shared typography/geometry contract through `npm run test:style`. The existing CI `npm test` step runs this mandatory gate too; no optional or skipped style check is used. To rerun style checks independently, run `npm run build` followed by `npm run test:style`. No new dependencies or external font requests are needed.
+
 ## Product-depth patterns — 2026-10-07
 
 A case study links to `/proposal?study=${project.slug}`. The client resolves that slug against embedded project records, seeds an empty editor with study context and preserves a saved brief until the visitor selects Use study brief. No lead is submitted. `output` remains a computed projection of the four field signals, so editing immediately changes the downloadable preview. A figure wrapper initially inherited browser margins and constrained the drawing; resetting figure margin and aspect ratio restores its drafting frame. Preview grid children now use `min-width:0` and `white-space:pre-wrap` at all widths. Product-depth checks require program/material/rationale records; browser regressions verify contextual seed, preserved edits, download, no-JS fallback and 390px layout.
